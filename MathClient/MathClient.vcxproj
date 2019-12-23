@@ -91,11 +91,17 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>..\..\..\..\..\..\..\~Mukesh\~CodingAreaNeverDelete\C++11\CreatingWindowsDLL\DLLCode\DllCode;C:\~Mukesh\~CodingAreaNeverDelete\C++11\CreatingWindowsDLL\DLLCode\DllCode\DllCode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>DllCode.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\..\..\..\~Mukesh\~CodingAreaNeverDelete\C++11\CreatingWindowsDLL\DLLCode\DllCode\$(IntDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d "C:\~Mukesh\~CodingAreaNeverDelete\C++11\CreatingWindowsDLL\DLLCode\DllCode\$(IntDir)DllCode.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -123,13 +129,19 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>..\..\..\..\..\..\..\~Mukesh\~CodingAreaNeverDelete\C++11\CreatingWindowsDLL\DLLCode\DllCode;C:\~Mukesh\~CodingAreaNeverDelete\C++11\CreatingWindowsDLL\DLLCode\DllCode\DllCode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>DllCode.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\..\..\..\~Mukesh\~CodingAreaNeverDelete\C++11\CreatingWindowsDLL\DLLCode\DllCode\$(IntDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d "C:\~Mukesh\~CodingAreaNeverDelete\C++11\CreatingWindowsDLL\DLLCode\DllCode\$(IntDir)DllCode.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -151,6 +163,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\DLLCode\DllCode\DllCode\Mathlibrary.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
